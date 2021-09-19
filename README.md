@@ -1,4 +1,4 @@
-# terrafrom-state-migration-issue
+# terraform-state-migration-issue
 
 ### The issue
 
