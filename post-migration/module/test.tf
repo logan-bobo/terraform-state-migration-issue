@@ -12,7 +12,7 @@ resource "aws_security_group" "test" {
     revoke_rules_on_delete = true
 }
 
-resource "aws_security_group_rule" "gress_to_all" {
+resource "aws_security_group_rule" "egress_to_all" {
     security_group_id = aws_security_group.test.id
     description       = "Allow egress to all"
     type              = "egress"

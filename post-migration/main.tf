@@ -24,7 +24,7 @@ resource "aws_security_group" "test2" {
 
 variable "module_enable" {
     type = bool 
-    default = false
+    default = true
 }
 
 module "test" {
