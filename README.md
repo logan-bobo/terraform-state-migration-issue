@@ -2,7 +2,7 @@
 
 ### The issue
 
-Terraform will remove resrouce dependencies when running `terrafrom state mv source destination` therefore if you attempt to remove items state migration terrafrom will remove objects in an incorrect order producing a non zero exit code
+Terraform will remove resrouce dependencies when running `terrafrom state mv source destination` therefore if you attempt to remove items post state migration terrafrom will remove resources in an incorrect order producing a non zero exit code upon execution. 
 
 
 ### Reproducing the issue
@@ -89,7 +89,7 @@ Then we run `terraform state mv x y` (command can be found in `post-migration/mi
     },
 ```
 
-Now we have moved the resources to their new module and they have lost their dependenices. If the resource is set to be destroyed terraform the destory will not execute cleanley as shown in the output below. This is because the security group is removed before the security group role.
+Now we have moved the resources to their new module and they have lost their dependenices. If the resource is set to be destroyed terraform apply will not execute cleanley as shown in the output below. This is because the security group is removed before the security group rule.
 
 ```
 module.test[0].aws_security_group_rule.gress_to_all: Destroying... [id=sgrule-]
