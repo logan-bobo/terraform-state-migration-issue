@@ -2,7 +2,7 @@
 
 ### The issue
 
-Terraform will remove resrouce dependencies when running `terrafrom state mv source destination` therefore if you attempt to remove items post state migration terrafrom will remove resources in an incorrect order producing a non zero exit code upon execution. 
+Terraform will remove resrouce dependencies when running `terraform state mv source destination` therefore if you attempt to remove items post state migration terraformm will remove resources in an incorrect order producing a non zero exit code upon execution. 
 
 
 ### Reproducing the issue
